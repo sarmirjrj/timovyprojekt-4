@@ -1,0 +1,34 @@
+studentsky "facebook" na vymienanie materialov pre ucm fpv aplikovana inf
+
+nazov STUDDIT
+
+prihlasovanie
+profile management
+feed
+upvotedownvote
+ucitel admin
+thread
+DM/friends
+groups
+library/archiv
+
+
+Daniel - main page
+
+
+product owner - ja
+front end- valentin
+databazy - alex
+backend - matej
+dizajn content manager - daniel
+tester - matus 
+
+
+
+DB
+username, legal name, mail skolsky, heslo, rocnik, ucitel/student
+
+posty - post id, parent id, closest id, obsah, up/down vote, id postera, tagy
+
+
+
