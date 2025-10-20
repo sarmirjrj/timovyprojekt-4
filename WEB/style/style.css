@@ -1,0 +1,47 @@
+ body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        /* Horná lišta */
+        .menu {
+            background-color: #8DD8FF;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+
+        /* Tlačidlá v menu */
+        .menu button {
+            background-color: #78C0E0;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+
+        /* Efekt po prejdení myšou */
+        .menu button:hover {
+            background-color: #449DD1;
+        }
+
+        /* Priestor pod menu, aby text nezačínal hneď pod ním */
+        .content {
+            padding-top: 70px;
+            text-align: center;
+        }
+      .menu img {
+            position: fixed;
+            width: 6%;
+           margin: -15px;
+           display: flex;
+           left: 30px;
+        }
