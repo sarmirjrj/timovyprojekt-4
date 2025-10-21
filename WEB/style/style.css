@@ -1,47 +1,84 @@
  body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
+     margin: 0;
+     font-family: Arial, sans-serif;
+     background-color: #f2f2f2;
+ }
+
+ /* Horná lišta */
+ .menu {
+     background-color: #8DD8FF;
+     position: fixed;
+     top: 0;
+     width: 100%;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     
+     padding: 10px 0;
+     ;
+
+ }
+ .banner_logo
+ {
+    height: 80px;
+    width: auto;
+ }
+
+ .custom-navbar {
+  background-color: #8DD8FF; 
+  color:black;
+}
+
+ .navbar-nav {
+  margin-left: 125px !important;   
+  margin-right: auto !important; 
+}
+.no-bottom-border th {
+            border-bottom: none !important;
+        }
+.no-bottom-border td {
+            border-bottom: none !important;
         }
 
-        /* Horná lišta */
-        .menu {
-            background-color: #8DD8FF;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-        }
 
-        /* Tlačidlá v menu */
-        .menu button {
-            background-color: #78C0E0;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin: 0 5px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: 0.3s;
-        }
+.my-table {
+    background-color: #8CC3E3; /* svetlomodrá farba celej tabuľky */
+}
 
-        /* Efekt po prejdení myšou */
-        .menu button:hover {
-            background-color: #449DD1;
-        }
+.my-table th,
+.my-table td {
+    background-color: #8CC3E3; /* modré pozadie pre všetky bunky */
+}
 
-        /* Priestor pod menu, aby text nezačínal hneď pod ním */
-        .content {
-            padding-top: 70px;
-            text-align: center;
-        }
-      .menu img {
-            position: fixed;
-            width: 6%;
-           margin: -15px;
-           display: flex;
-           left: 30px;
-        }
+ /* Tlačidlá v menu */
+ .buttons a {
+  background-color: #78C0E0;
+  color: white;
+  text-decoration: none;
+  padding: 12px 20px;
+  margin: 0 5px;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+.buttons a:hover {
+  background-color: #449DD1;
+}
+.menu img {
+     position: absolute;
+     display: inline-block; 
+     left: 30px;
+     height: 90px;
+     bottom:  -14px;
+     
+ }
+ 
+ /* Priestor pod menu, aby text nezačínal hneď pod ním */
+ .content {
+     padding-top: 70px;
+     text-align: center;
+ }
+
