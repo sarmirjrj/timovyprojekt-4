@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 20, 2025 at 04:36 PM
+-- Generation Time: Oct 30, 2025 at 09:26 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -97,6 +97,20 @@ CREATE TABLE `post_files` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `post_votes`
+--
+
+CREATE TABLE `post_votes` (
+  `vote_id` int(11) NOT NULL,
+  `post_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `vote_type` enum('like','dislike') NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -155,16 +169,20 @@ ALTER TABLE `post_files`
   ADD KEY `post_id` (`post_id`);
 
 --
+-- Indexes for table `post_votes`
+--
+ALTER TABLE `post_votes`
+  ADD PRIMARY KEY (`vote_id`),
+  ADD UNIQUE KEY `unique_vote` (`post_id`,`user_id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`user_id`),
   ADD UNIQUE KEY `username` (`username`),
-  ADD UNIQUE KEY `email` (`school_mail`),
-  ADD UNIQUE KEY `school_mail` (`school_mail`),
-  ADD UNIQUE KEY `password` (`password`),
-  ADD UNIQUE KEY `legal_name` (`legal_name`),
-  ADD UNIQUE KEY `age` (`age`);
+  ADD UNIQUE KEY `school_mail` (`school_mail`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -199,6 +217,12 @@ ALTER TABLE `posts`
 --
 ALTER TABLE `post_files`
   MODIFY `file_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `post_votes`
+--
+ALTER TABLE `post_votes`
+  MODIFY `vote_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -241,6 +265,13 @@ ALTER TABLE `posts`
 --
 ALTER TABLE `post_files`
   ADD CONSTRAINT `post_files_ibfk_1` FOREIGN KEY (`post_id`) REFERENCES `posts` (`post_id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `post_votes`
+--
+ALTER TABLE `post_votes`
+  ADD CONSTRAINT `post_votes_ibfk_1` FOREIGN KEY (`post_id`) REFERENCES `posts` (`post_id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `post_votes_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
