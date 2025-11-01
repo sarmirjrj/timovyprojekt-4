@@ -1,8 +1,8 @@
 <?php
-$host = '127.0.0.1';
-$db   = 'studdit';
-$user = 'root';
-$pass = 'usbw';
+$host = 'database';
+$db   = $_ENV['MARIADB_DATABASE'];
+$user = $_ENV['MARIADB_USER'];
+$pass = $_ENV['MARIADB_PASSWORD'];
 $port = 3306;
 
 $mysqli = new mysqli($host, $user, $pass, $db, $port);

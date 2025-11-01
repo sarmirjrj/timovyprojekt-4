@@ -1,0 +1,41 @@
+# Chcel som zjednotit dev prostredie pomocou Docker compose, tak som vytvoril tento subor a upravil par veci v kode.
+# Vytvoril som .env subor, kde su nastavene premenne pre DB pristupy.
+# V compose som pridal sluzbu pre mariadb a adminer (webove rozhranie pre spravu DB).
+# V backend casti som upravil db.php, aby sa pripojoval na DB kontajner pomocou premennych z .env suboru.
+# V .gitignore som pridal vynimku pre DB data, aby sa necommitovali do repozitara.
+
+name: tp2025
+
+services:
+  database:
+    image: mariadb:latest
+    restart: unless-stopped
+    environment: 
+      - MARIADB_USER=${MARIADB_USER}
+      - MARIADB_PASSWORD=${MARIADB_PASSWORD}
+      - MARIADB_DATABASE=${MARIADB_DATABASE}
+      - MARIADB_ROOT_PASSWORD=${MARIADB_ROOT_PASSWORD}
+    volumes:
+      - ./database/data:/var/lib/mysql
+  adminer:
+    image: adminer:latest
+    restart: unless-stopped
+    ports:
+      - 8080:8080
+    environment:
+      - ADMINER_DEFAULT_SERVER=database
+      # - ADMINER_PLUGINS='tables-filter tinymce login-servers'
+
+  backend:
+    build: ./Backend/docker_image
+    # image: php:8-apache-trixie
+    restart: unless-stopped
+    environment: 
+      - MARIADB_USER=${MARIADB_USER}
+      - MARIADB_PASSWORD=${MARIADB_PASSWORD}
+      - MARIADB_DATABASE=${MARIADB_DATABASE}
+    ports:
+      - 80:80
+    volumes:
+      - ./Backend:/var/www/html/
+      - ./WEB:/var/www/html/WEB
