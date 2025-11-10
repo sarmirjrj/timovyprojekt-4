@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="sk">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>STUDDIT - Projekt</title>
-        <meta name="description" content="studensky web pre informatikou">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="style/style.css">
-        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    </head>
-    <body>
-    
-          <!-- MENU -->
-          
 
-    <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>STUDDIT - Projekt</title>
+  <meta name="description" content="studensky web pre informatikou">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
     <div class="container">
       <a class="navbar-brand" href="index.html"><img src="images/banner_logo.png" alt="banner" class="banner_logo"></a>
       <ul class="navbar-nav mx-auto">
@@ -28,16 +28,114 @@
     </div>
   </nav>
 
-
-<!-- Obsah stránky -->
-
   <div class="container mt-5">
-    <h1 class="text-center mb-4">Vitajte na STUDDIT!</h1>
-    <p class="lead text-center">čoskoro sa tu objaví obsah o našom projekte.</p>
+    <h1 class="text-center mb-4">Projekt STUDDIT</h1>
 
+    <div class="card shadow-sm p-4">
+      <h5 class="mb-3">Prezentácia projektu - STUDDIT</h5>
+      <p>
+        Nižšie si môžete pozrieť našu prezentáciu priamo na stránke.
+      </p>
+
+      <div class="ratio ratio-16x9">
+        <iframe src="docs/studdit_prezentacia.pdf" title="Prezentácia STUDDIT" class=".pdf-file"></iframe>
+      </div>
+    </div>
     
+  </div>
+  <div class="container mt-5 card shadow-sm p-4">
+    <h5 class="mb-3">Grafické návrhy a snímky aplikácie</h5>
+
+    <div class="row g-4">
+
+      <div class="col-md-3 col-6">
+        <img src="images/mockup_4.jpg" class="img-fluid rounded shadow-sm" data-bs-toggle="modal"
+          data-bs-target="#modal1" alt="foto1">
+      </div>
+
+      <div class="col-md-3 col-6">
+        <img src="images/mockup_3.jpg" class="img-fluid rounded shadow-sm" data-bs-toggle="modal"
+          data-bs-target="#modal2" alt="foto2">
+      </div>
+
+      <div class="col-md-3 col-6">
+        <img src="images/mockup_2.jpg" class="img-fluid rounded shadow-sm" data-bs-toggle="modal"
+          data-bs-target="#modal3" alt="foto3">
+      </div>
+
+      <div class="col-md-3 col-6">
+        <img src="images/mockup_1.jpg" class="img-fluid rounded shadow-sm" data-bs-toggle="modal"
+          data-bs-target="#modal4" alt="foto4">
+      </div>
+    </div>
   </div>
 
 
-    </body>
+  <div class="modal fade" id="modal1" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content bg-transparent border-0">
+        <img src="images/mockup_4.jpg" class="img-fluid rounded" alt="foto1">
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal2" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content bg-transparent border-0">
+        <img src="images/mockup_3.jpg" class="img-fluid rounded" alt="foto2">
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal3" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content bg-transparent border-0">
+        <img src="images/mockup_2.jpg" class="img-fluid rounded" alt="foto3">
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal4" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content bg-transparent border-0">
+        <img src="images/mockup_1.jpg" class="img-fluid rounded" alt="foto4">
+      </div>
+    </div>
+  </div>
+
+
+  <footer class=" text-dark text-center text-lg-start border-top mt-5">
+    <div class="container p-4">
+      <div class="row">
+
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0 text-start">
+          <h5 class="fw-bold">STUDDIT</h5>
+          <p class="text-muted mb-0">© 2025 STUDDIT. Všetky práva vyhradené.</p>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0 text-center">
+          <h6 class="fw-bold">Navigácia</h6>
+          <ul class="list-unstyled mb-0">
+            <li><a href="tim.html" class="text-decoration-none text-dark">Tím</a></li>
+            <li><a href="zapisnica.html" class="text-decoration-none text-dark">Zápisnica</a></li>
+            <li><a href="harmonogram.html" class="text-decoration-none text-dark">Harmonogram</a></li>
+            <li><a href="motivacny_list.html" class="text-decoration-none text-dark">Motivačný list</a></li>
+            <li><a href="projekt.html" class="text-decoration-none text-dark">Projekt</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12 mb-4 mb-md-0 text-end">
+          <h6 class="fw-bold">Kontakt</h6>
+          <p class="mb-1"><i class="bi bi-envelope"></i> studdit@email.com</p>
+          <p class="mb-2"><i class="bi bi-telephone"></i> +421 900 123 456</p>
+          <a href="https://github.com/" target="_blank" class="text-dark fs-4">
+            <i class="bi bi-github"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
 </html>
