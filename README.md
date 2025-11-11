@@ -40,11 +40,10 @@ timovyprojekt-4/
 └── README.md
 
 ## Tím projektu
-
-Juraj Šarmír – Projektový manažér
-Matej – Backend (PHP API, logika)
-Valentin – Frontend (HTML, CSS, API integrácia)
-Alex – Databázy (MySQL, návrh a optimalizácia)
-Matúš – Testing (testovacie scenáre, QA)
-Daniel – Dizajn & Content (UI návrh, dokumentačný web)
+- Juraj Šarmír – Projektový manažér
+- Matej – Backend (PHP API, logika)
+- Valentin – Frontend (HTML, CSS, API integrácia)
+- Alex – Databázy (MySQL, návrh a optimalizácia)
+- Matúš – Testing (testovacie scenáre, QA)
+- Daniel – Dizajn & Content (UI návrh, dokumentačný web)
 
