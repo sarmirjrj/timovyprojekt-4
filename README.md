@@ -31,7 +31,6 @@ Ak máte nainštalovaný Docker a Docker Compose, môžete projekt spustiť lok�
 
 ## Štruktúra repozitára
 timovyprojekt-4/
-│
 ├── Backend/        ← PHP API a spracovanie požiadaviek + Frontend projektu (HTML/CSS)
 ├── WEB/            ← Projektová stránka (HTML/CSS)  
 ├── database/       ← SQL skripty, databázová schéma  
