@@ -30,14 +30,13 @@ Ak máte nainštalovaný Docker a Docker Compose, môžete projekt spustiť lok�
 5. Pre ukončenie kontajnerov `docker-compose down`
 
 ## Štruktúra repozitára
-timovyprojekt-4/
-
-├── Backend/        ← PHP API a spracovanie požiadaviek + Frontend projektu (HTML/CSS)
-├── WEB/            ← Projektová stránka (HTML/CSS)  
-├── database/       ← SQL skripty, databázová schéma  
-├── docker-compose.yaml  
-├── .gitignore  
-└── README.md
+- timovyprojekt-4/
+- Backend/        ← PHP API a spracovanie požiadaviek + Frontend projektu (HTML/CSS)
+-  WEB/            ← Projektová stránka (HTML/CSS)  
+- database/       ← SQL skripty, databázová schéma  
+- docker-compose.yaml  
+- .gitignore  
+- README.md
 
 ## Tím projektu
 - Juraj Šarmír – Projektový manažér
