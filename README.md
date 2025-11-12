@@ -39,7 +39,7 @@ Ak máte nainštalovaný Docker a Docker Compose, môžete projekt spustiť lok�
 - README.md
 
 ## Tím projektu
-- Juraj Šarmír – Projektový manažér
+- Juraj – Projektový manažér
 - Matej – Backend (PHP API, logika)
 - Valentin – Frontend (HTML, CSS, API integrácia)
 - Alex – Databázy (MySQL, návrh a optimalizácia)
