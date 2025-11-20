@@ -201,6 +201,7 @@
             <a href="users_list.php">Používatelia</a>
           <?php endif; ?>
           <a href="profile.php">Môj profil</a>
+          <a href="library.php">Knižnica súborov</a>
           <a href="logout.php">Odhlásiť</a>
         <?php else: ?>
           <a href="register.php">Registrácia</a>
