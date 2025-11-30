@@ -1,6 +1,6 @@
 <?php
 require 'db.php';
-require 'auth.php'; // ak chceš, môžeš dať require_login(); aby knižnicu videli len prihlásení
+require 'auth.php';
 include 'header.php';
 
 /* --- vstupy / filtre --- */
@@ -14,7 +14,6 @@ $page      = max(1, (int)($_GET['p'] ?? 1));
 $pageSize  = 50;
 $offset    = ($page - 1) * $pageSize;
 
-/* --- základný SELECT: post_files + posts + groups + users --- */
 $baseSql =
 " FROM post_files pf
   JOIN posts p   ON p.post_id  = pf.post_id
@@ -26,7 +25,7 @@ $conds = [];
 $params = [];
 $types  = "";
 
-/* vyhľadávanie podľa názvu súboru alebo názvu príspevku */
+/* vyhladavanie podla nazvu suboru alebo nazvu prispevku */
 if ($q !== '') {
   $conds[] = "(pf.file_name LIKE CONCAT('%',?,'%') OR p.title LIKE CONCAT('%',?,'%'))";
   $types  .= "ss";
@@ -41,27 +40,26 @@ if ($group_id > 0) {
   $params[] = $group_id;
 }
 
-/* filter ročník */
+/* filter rocnik */
 if ($year > 0) {
   $conds[] = "g.year = ?";
   $types  .= "i";
   $params[] = $year;
 }
 
-/* filter typu (prípony) */
+/* filter typu (pripony) */
 if ($filetype !== '') {
   $conds[] = "pf.file_type = ?";
   $types  .= "s";
   $params[] = $filetype;
 }
 
-/* zlož WHERE */
 $where = "";
 if (!empty($conds)) {
   $where = " AND " . implode(" AND ", $conds);
 }
 
-/* spočítaj celkom pre stránkovanie */
+
 $countSql = "SELECT COUNT(*)" . $baseSql . $where;
 $stc = $mysqli->prepare($countSql);
 if ($types !== "") {
@@ -82,7 +80,6 @@ $orderSql = ($order === 'name')
   ? " ORDER BY pf.file_name ASC"
   : " ORDER BY COALESCE(pf.uploaded_at, p.created_at) DESC";
 
-/* finálny SELECT */
 $selectSql =
 "SELECT pf.file_id, pf.file_name, pf.file_path, pf.file_type,
         COALESCE(pf.uploaded_at, p.created_at) AS added_at,
@@ -97,7 +94,6 @@ if (!$stmt) {
   include 'footer.php'; exit;
 }
 
-/* bind parametrov vrátane limit/offset */
 $types2  = $types . "ii";
 $params2 = $params;
 $params2[] = $pageSize;
@@ -111,10 +107,8 @@ call_user_func_array([$stmt, 'bind_param'], $bind2);
 $stmt->execute();
 $files = $stmt->get_result();
 
-/* na plnenie filtrov (selecty) */
 $groups = $mysqli->query("SELECT group_id, name, year FROM groups ORDER BY year, name");
 
-/* jednoduchý zoznam typov (alebo si doplň podľa potreby) */
 $typesList = $mysqli->query("SELECT DISTINCT file_type FROM post_files WHERE file_type IS NOT NULL AND file_type<>'' ORDER BY file_type");
 
 ?>
