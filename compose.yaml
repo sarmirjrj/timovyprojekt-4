@@ -39,3 +39,13 @@ services:
     volumes:
       - ./Backend:/var/www/html/
       - ./WEB:/var/www/html/WEB
+  
+  tester:
+    build: ./Tester/docker_image
+    restart: unless-stopped
+    environment:
+      - MARIADB_USER=${MARIADB_USER}
+      - MARIADB_PASSWORD=${MARIADB_PASSWORD}
+      - MARIADB_DATABASE=${MARIADB_DATABASE}
+    volumes:
+      - ./Tester:/opt

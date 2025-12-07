@@ -1,5 +1,5 @@
 <?php
-require 'db.php'; include 'header.php';
+require 'db.php'; require 'auth.php'; include 'header.php'; 
 $year = isset($_GET['year']) ? (int)$_GET['year'] : 0;
 if ($year>0) {
   $stmt = $mysqli->prepare("SELECT group_id, name, year, description FROM groups WHERE year=? ORDER BY name");
