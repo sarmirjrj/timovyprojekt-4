@@ -18,11 +18,14 @@ testing_user = {
 }
 add_testing_user = True
 
-max_workers = None
-test_count = 10
+max_workers = 100
+test_count = 500
+waiting_cycles = 3
 
 register_test = True
 group_create_test = True
 group_join_test = 3
 posts_test = 5
 file_name = "test.pdf"
+vote_post_test = 10
+comment_post_test = 10

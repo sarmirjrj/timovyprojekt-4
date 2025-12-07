@@ -1,3 +1,4 @@
 database/data/*
 Tester/users.csv
 Tester/__pycache__/
+Tester/*.log
